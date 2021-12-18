@@ -2,14 +2,18 @@
   "name": "pub-manifest",
   "version": "0.0.2",
   "description": "",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "repository": "https://github.com/Jeffxz/pub-manifest.git",
   "scripts": {
     "build": "tsc",
     "lint": "eslint --ext .ts,.tsx,.js --no-eslintrc -c ./eslint.js index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "ZHENG XU",
+  "author": "ZHENG XU <zhengxu7806@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.15.0",

@@ -1,10 +1,12 @@
 {
   "name": "pub-manifest",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
+  "repository": "https://github.com/Jeffxz/pub-manifest.git",
   "scripts": {
-    "compile": "tsc",
+    "build": "tsc",
+    "lint": "eslint --ext .ts,.tsx,.js --no-eslintrc -c ./eslint.js index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ZHENG XU",
@@ -16,8 +18,6 @@
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1",
-    "typescript": "^4.5.4"
-  },
-  "dependencies": {
+    "typescript": "^4.4.4"
   }
 }

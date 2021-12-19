@@ -1,6 +1,6 @@
 export enum TextDirection {
-  'ltr',
-  'rtl',
+  LTR = 'ltr',
+  RTL = 'rtl',
 }
 
 export type LocalizableString = {
@@ -74,6 +74,6 @@ export class PublicationManifest {
     this.readingOrder = readingOrder
     this.type = []
     this.type.push('CreativeWork')
-    this.readingProgression = TextDirection.ltr
+    this.readingProgression = TextDirection.LTR
   }
 }

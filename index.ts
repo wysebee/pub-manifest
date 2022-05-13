@@ -1,3 +1,9 @@
+/**
+ * Wysebee PublicationManifest is based on pub manifest
+ * https://www.w3.org/TR/pub-manifest/#webidl-wpm
+ * along with some customization for convenience purpose
+ */
+
 export enum TextDirection {
   LTR = 'ltr',
   RTL = 'rtl',
@@ -28,14 +34,14 @@ export type Entity = {
   identifier?: string[]
 }
 
-/**
- * https://www.w3.org/TR/pub-manifest/#webidl-wpm
- */
 export type PublicationManifest = {
+  profile: string // required
+  id: string // required by Wysebee
+  name: string // required
+  readingOrder: string[] // required
+
   type?: string[]
-  profile: string
   conformsTo?: string[]
-  id?: string
   abridged?: boolean
   accessMode?: string[]
   accessModeSufficient?: string[]
@@ -61,9 +67,10 @@ export type PublicationManifest = {
   dateModified?: string
   datePublished?: string
   readingProgression?: TextDirection
-  name: LocalizableString[] | string
-  readingOrder: LinkedResource[] | string[]
-  resources?: LinkedResource[] | string[]
+  resources?: LinkedResource[]
   links?: LinkedResource[]
   uniqueResources?: string
+  coverImage?: string // extra, easier to use than go through resources each time
+  toc?: string // extra, easier to use than go through resources each time
+  description?: string // extra
 }

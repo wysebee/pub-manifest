@@ -28,7 +28,10 @@ export type Entity = {
   identifier?: string[]
 }
 
-export class PublicationManifest {
+/**
+ * https://www.w3.org/TR/pub-manifest/#webidl-wpm
+ */
+export type PublicationManifest = {
   type?: string[]
   profile: string
   conformsTo?: string[]
@@ -40,7 +43,7 @@ export class PublicationManifest {
   accessibilityHazard?: string[]
   accessibilitySummary?: LocalizableString[]
   artist?: Entity[]
-  author?: Entity[]
+  author?: Entity[] | string
   colorist?: Entity[]
   contributor?: Entity[]
   creator?: Entity[]
@@ -58,22 +61,9 @@ export class PublicationManifest {
   dateModified?: string
   datePublished?: string
   readingProgression?: TextDirection
-  name: LocalizableString[]
-  readingOrder: LinkedResource[]
-  resources?: LinkedResource[]
+  name: LocalizableString[] | string
+  readingOrder: LinkedResource[] | string[]
+  resources?: LinkedResource[] | string[]
   links?: LinkedResource[]
   uniqueResources?: string
-
-  constructor(
-    profile: string,
-    name: LocalizableString[],
-    readingOrder: LinkedResource[]
-  ) {
-    this.profile = profile
-    this.name = name
-    this.readingOrder = readingOrder
-    this.type = []
-    this.type.push('CreativeWork')
-    this.readingProgression = TextDirection.LTR
-  }
 }

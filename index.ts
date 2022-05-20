@@ -47,18 +47,18 @@ export type PublicationManifest = {
   accessModeSufficient?: string[]
   accessibilityFeature?: string[]
   accessibilityHazard?: string[]
-  accessibilitySummary?: LocalizableString[]
-  artist?: Entity[]
+  accessibilitySummary?: LocalizableString[] | string
+  artist?: Entity[] | string
   author?: Entity[] | string
-  colorist?: Entity[]
-  contributor?: Entity[]
-  creator?: Entity[]
-  editor?: Entity[]
-  illustrator?: Entity[]
-  inker?: Entity[]
+  colorist?: Entity[] | string
+  contributor?: Entity[] | string
+  creator?: Entity[] | string
+  editor?: Entity[] | string
+  illustrator?: Entity[] | string
+  inker?: Entity[] | string
   letterer?: Entity[]
   penciler?: Entity[]
-  publisher?: Entity[]
+  publisher?: Entity[] | string
   readBy?: Entity[]
   translator?: Entity[]
   url?: string[]
